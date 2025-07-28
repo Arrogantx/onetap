@@ -13,7 +13,7 @@ import { MarketingAnalysisForm } from '@/components/marketing-analysis-form';
 export default function Home() {
   return (
     <main className="min-h-screen">
-      <Navigation onOpenTypeform={() => document.documentElement.dispatchEvent(new CustomEvent('openTypeform'))} />
+      <Navigation />
       <HeroSection onOpenTypeform={() => document.documentElement.dispatchEvent(new CustomEvent('openTypeform'))} />
       <ServicesSection />
       <CaseStudiesSection />

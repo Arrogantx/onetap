@@ -8,9 +8,7 @@ import { ChevronDown, Star, Award, BookOpen, Users } from 'lucide-react';
 import Link from 'next/link';
 import { TYPEFORM_IDS } from './typeform-modal';
 
-interface NavigationProps {
-  onOpenTypeform: () => void;
-}
+interface NavigationProps {}
 
 const whatWeDoServices = {
   'All Services': [
@@ -167,7 +165,7 @@ const resourcesItems = {
   ],
 };
 
-export function Navigation({ onOpenTypeform }: NavigationProps) {
+export function Navigation({}: NavigationProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [activeMobileDropdown, setActiveMobileDropdown] = useState<string | null>(null);
@@ -441,7 +439,7 @@ export function Navigation({ onOpenTypeform }: NavigationProps) {
                               <p className="text-sm text-disruptive-gray">See how we can grow your business</p>
                             </div>
                             <button
-                              onClick={() => onOpenTypeform()}
+                              onClick={() => document.documentElement.dispatchEvent(new CustomEvent('openTypeform', { detail: { type: 'contact' } }))}
                               className="bg-disruptive-red hover:bg-disruptive-dark-red text-white px-4 py-2 rounded font-bold text-sm growth-plan-button"
                             >
                               GET STARTED
@@ -757,7 +755,7 @@ export function Navigation({ onOpenTypeform }: NavigationProps) {
                             </div>
                             <button
                               onClick={() => {
-                                onOpenTypeform();
+                                document.documentElement.dispatchEvent(new CustomEvent('openTypeform', { detail: { type: 'contact' } }));
                                 setIsMobileMenuOpen(false);
                               }}
                               className="bg-disruptive-red hover:bg-disruptive-dark-red text-white px-4 py-2 rounded font-bold text-sm growth-plan-button"
