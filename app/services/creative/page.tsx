@@ -138,7 +138,7 @@ export default function CreativePage() {
 
   return (
     <main className="min-h-screen">
-      <Navigation onOpenTypeform={() => document.documentElement.dispatchEvent(new CustomEvent('openTypeform'))} />
+      <Navigation />
       
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-pink-600 via-pink-700 to-pink-800 text-white py-24 overflow-hidden">

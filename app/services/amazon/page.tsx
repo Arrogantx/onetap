@@ -137,7 +137,7 @@ export default function AmazonPage() {
 
   return (
     <main className="min-h-screen">
-      <Navigation onOpenTypeform={() => document.documentElement.dispatchEvent(new CustomEvent('openTypeform'))} />
+      <Navigation />
       
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-yellow-600 via-yellow-700 to-orange-600 text-white py-24 overflow-hidden">

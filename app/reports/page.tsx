@@ -60,7 +60,7 @@ const reports = [
 export default function ReportsPage() {
   return (
     <main className="min-h-screen">
-      <Navigation onOpenTypeform={() => {}} />
+      <Navigation />
       
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-disruptive-red via-red-600 to-disruptive-dark-red text-white py-24">

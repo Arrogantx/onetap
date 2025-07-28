@@ -157,7 +157,7 @@ export default function ServicesPage() {
 
   return (
     <main className="min-h-screen">
-      <Navigation onOpenTypeform={() => document.documentElement.dispatchEvent(new CustomEvent('openTypeform', { detail: { type: 'default' } }))} />
+      <Navigation />
       
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-disruptive-red via-red-600 to-disruptive-dark-red text-white py-24 overflow-hidden">

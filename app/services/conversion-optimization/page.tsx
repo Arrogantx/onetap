@@ -152,7 +152,7 @@ export default function ConversionOptimizationPage() {
 
   return (
     <main className="min-h-screen">
-      <Navigation onOpenTypeform={() => document.documentElement.dispatchEvent(new CustomEvent('openTypeform'))} />
+      <Navigation />
       
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-orange-600 via-orange-700 to-orange-800 text-white py-24 overflow-hidden">

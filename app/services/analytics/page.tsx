@@ -133,7 +133,7 @@ export default function AnalyticsPage() {
 
   return (
     <main className="min-h-screen">
-      <Navigation onOpenTypeform={() => document.documentElement.dispatchEvent(new CustomEvent('openTypeform'))} />
+      <Navigation />
       
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-teal-600 via-teal-700 to-teal-800 text-white py-24 overflow-hidden">

@@ -8,7 +8,7 @@ import { FileText, Scale, Shield, AlertTriangle, CheckCircle, Mail } from 'lucid
 export default function TermsPage() {
   return (
     <main className="min-h-screen">
-      <Navigation onOpenTypeform={() => {}} />
+      <Navigation />
       
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-gray-600 via-gray-700 to-gray-800 text-white py-24">

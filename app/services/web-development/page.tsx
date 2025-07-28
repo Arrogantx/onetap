@@ -140,7 +140,7 @@ export default function WebDevelopmentPage() {
 
   return (
     <main className="min-h-screen">
-      <Navigation onOpenTypeform={() => document.documentElement.dispatchEvent(new CustomEvent('openTypeform'))} />
+      <Navigation />
       
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-gray-600 via-gray-700 to-gray-800 text-white py-24 overflow-hidden">

@@ -104,7 +104,7 @@ export default function ReferralDashboardPage() {
 
   return (
     <main className="min-h-screen bg-gray-50">
-      <Navigation onOpenTypeform={() => {}} />
+      <Navigation />
       
       {/* Dashboard Header */}
       <section className="bg-gradient-to-br from-disruptive-red via-red-600 to-disruptive-dark-red text-white py-12">
