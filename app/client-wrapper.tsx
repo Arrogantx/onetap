@@ -35,6 +35,9 @@ export default function ClientWrapper({ children }: PropsWithChildren) {
 
   const closeTypeform = () => {
     setIsTypeformOpen(false);
+    // Explicitly remove the class to ensure scroll is restored,
+    // providing a fallback for the component's own effect.
+    document.body.classList.remove('modal-open');
   };
 
   useEffect(() => {
