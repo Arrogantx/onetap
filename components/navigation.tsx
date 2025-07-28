@@ -8,7 +8,9 @@ import { ChevronDown, Star, Award, BookOpen, Users } from 'lucide-react';
 import Link from 'next/link';
 import { TYPEFORM_IDS } from './typeform-modal';
 
-interface NavigationProps {}
+interface NavigationProps {
+  onOpenTypeform?: () => void;
+}
 
 const whatWeDoServices = {
   'All Services': [
