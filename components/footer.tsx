@@ -3,7 +3,14 @@
 import { motion } from 'framer-motion';
 import { Linkedin, Youtube, Mail, Phone, MapPin, Facebook, Instagram } from 'lucide-react';
 import Link from 'next/link';
-import Image from 'next/image';
+
+// Import images directly to ensure paths are correct at build time
+import GooglePartner from '../public/images/Google-Premier-Partner-Logo-White-1.webp';
+import AmazonPartner from '../public/images/amazon-partner-badge-2.webp';
+import HubSpotPartner from '../public/images/Hubspot-Certified-Partner-Logo.webp';
+import BingPartner from '../public/images/Bing-Ads-Accredited-Professional-Logo-1.webp';
+import MetaPartner from '../public/images/meta-partner-badge-3.webp';
+import KlaviyoPartner from '../public/images/Klaviyo-Master-Elite-Logo-1.webp';
 
 const footerLinks = {
   services: [
@@ -183,67 +190,73 @@ export function Footer() {
           <div className="grid grid-cols-3 md:grid-cols-6 gap-8 items-center">
             <div className="flex items-center justify-center h-20">
               <div className="w-full h-full flex items-center justify-center p-2">
-                <Image
-                  src="/images/Google-Premier-Partner-Logo-White-1.webp"
+                <img
+                  src={GooglePartner.src}
                   width={120}
                   height={60}
                   alt="Google Premier Partner"
                   className="max-w-full max-h-full object-contain filter brightness-75 hover:brightness-100 transition-all duration-300"
+                  loading="lazy"
                 />
               </div>
             </div>
             <div className="flex items-center justify-center h-20">
               <div className="w-full h-full flex items-center justify-center p-2">
-                <Image
-                  src="/images/amazon-partner-badge-2.webp"
+                <img
+                  src={AmazonPartner.src}
                   width={120}
                   height={60}
                   alt="Amazon Partner"
                   className="max-w-full max-h-full object-contain filter brightness-75 hover:brightness-100 transition-all duration-300"
+                  loading="lazy"
                 />
               </div>
             </div>
             <div className="flex items-center justify-center h-20">
               <div className="w-full h-full flex items-center justify-center p-2">
-                <Image
-                  src="/images/Hubspot-Certified-Partner-Logo.webp"
+                <img
+                  src={HubSpotPartner.src}
                   width={120}
                   height={60}
                   alt="HubSpot Certified Partner"
                   className="max-w-full max-h-full object-contain filter brightness-75 hover:brightness-100 transition-all duration-300"
+                  loading="lazy"
                 />
               </div>
             </div>
             <div className="flex items-center justify-center h-20">
               <div className="w-full h-full flex items-center justify-center p-2">
-                <Image
-                  src="/images/Bing-Ads-Accredited-Professional-Logo-1.webp"
+                <img
+                  src={BingPartner.src}
                   width={120}
                   height={60}
                   alt="Bing Ads Accredited Professional"
                   className="max-w-full max-h-full object-contain filter brightness-75 hover:brightness-100 transition-all duration-300"
+                  loading="lazy"
                 />
               </div>
             </div>
             <div className="flex items-center justify-center h-20">
               <div className="w-full h-full flex items-center justify-center p-2">
-                <Image
-                  src="/images/meta-partner-badge-3.webp"
+                <img
+                  src={MetaPartner.src}
                   width={120}
                   height={60}
                   alt="Meta Business Partner"
                   className="max-w-full max-h-full object-contain filter brightness-75 hover:brightness-100 transition-all duration-300"
+                  loading="lazy"
                 />
               </div>
             </div>
             <div className="flex items-center justify-center h-20">
               <div className="w-full h-full flex items-center justify-center p-2">
-                <Image
-                  src="/images/Klaviyo-Master-Elite-Logo-1.webp"
+                <img
+                  src={KlaviyoPartner.src}
                   width={120}
                   height={60}
                   alt="Klaviyo Master Elite"
                   className="max-w-full max-h-full object-contain filter brightness-75 hover:brightness-100 transition-all duration-300"
+                  loading="lazy"
                 />
               </div>
             </div>
