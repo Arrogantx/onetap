@@ -25,11 +25,14 @@ img, video {
 }
 
 /* Base layout and typography */
-html, body {
-  overflow-x: hidden;
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeSpeed;
-  margin: 0;
-  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 /* Smooth scrolling */
@@ -202,10 +205,6 @@ body.modal-open {
   -webkit-overflow-scrolling: touch;
 }
 
-footer {
-  overflow-x: hidden;
-}
-
 /* Reduce motion for animations when user prefers reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -241,37 +240,4 @@ body > pre:has(.lc-h5qda7) {
 
 .growth-plan-button:hover {
   transform: translateY(-2px);
-}
-
-/* Fix for the double scrollbar issue */
-html, body {
-  overflow-y: auto;
-  overflow-x: hidden;
-  width: auto;
-  height: auto;
-  position: relative;
-}
-
-/* Fix for the delayed scroll issue */
-section {
-  will-change: transform;
-  transform: translateZ(0);
-  backface-visibility: hidden;
-}
-
-/* Fix for footer white space */
-footer {
-  margin-bottom: -20px;
-  position: relative;
-  z-index: 10;
-}
-
-/* Hide any content that might appear after the footer */
-footer + * {
-  display: none !important;
-}
-
-/* Remove white line under footer */
-footer .w-full.h-[20px].bg-white.mt-[-20px] {
-  display: none;
 }
