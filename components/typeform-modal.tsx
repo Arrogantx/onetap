@@ -21,15 +21,22 @@ export function TypeformModal({ isOpen, onClose, typeformId = TYPEFORM_IDS.DEFAU
   const modalRef = useRef<HTMLDivElement>(null);
   const embedRef = useRef<HTMLDivElement>(null);
 
+  // Effect for managing body scroll lock
   useEffect(() => {
-    // Toggle body scroll
     if (isOpen) {
       document.body.classList.add('modal-open');
     } else {
       document.body.classList.remove('modal-open');
     }
 
-    // Load Typeform when modal is opened
+    // Cleanup function to ensure scroll is restored when component unmounts
+    return () => {
+      document.body.classList.remove('modal-open');
+    };
+  }, [isOpen]);
+
+  // Effect for loading and initializing the Typeform embed
+  useEffect(() => {
     if (isOpen) {
       // Ensure the script is loaded
       if (!document.getElementById('typeform-script')) {
@@ -68,10 +75,6 @@ export function TypeformModal({ isOpen, onClose, typeformId = TYPEFORM_IDS.DEFAU
         }
       }
     }
-
-    return () => {
-      document.body.classList.remove('modal-open');
-    };
   }, [isOpen, typeformId]);
 
   // Handle escape key
