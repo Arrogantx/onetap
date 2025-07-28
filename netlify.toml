@@ -1,0 +1,42 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+  [build.cache]
+  paths = [
+    ".next/cache/**",
+    "node_modules/**"
+  ]
+
+[dev]
+  command = "npm run dev"
+  port = 3000
+
+[functions]
+  directory = "netlify/functions"
+
+# ✅ Allow proper access to Next.js assets and API
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/__next/api/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/_next/*"
+  to = "/_next/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/static/*"
+  to = "/static/:splat"
+  status = 200
+
+# ❌ DO NOT fallback to index.html unless you're building a pure SPA.
+# Next.js handles routing via .next/server/pages or Edge Middleware.
+# Remove this unless you're building a static-only export.
+# [[redirects]]
+#   from = "/*"
+#   to = "/index.html"
+#   status = 200
+[[plugins]]
+  package = "@netlify/plugin-nextjs"

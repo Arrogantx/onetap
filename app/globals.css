@@ -1,0 +1,277 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Optimize image loading */
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Base theme variables */
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 255, 255, 255;
+}
+
+/* Force light palette for now */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 255, 255, 255;
+    --background-end-rgb: 255, 255, 255;
+  }
+}
+
+/* Base layout and typography */
+html, body {
+  overflow-x: hidden;
+  text-rendering: optimizeSpeed;
+  margin: 0;
+  padding: 0;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth; 
+  /* Only enable smooth scrolling for non-reduced motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    scroll-behavior: auto;
+  }
+}
+
+/* Font and border defaults */
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 84% 60%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 84% 60%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+
+    /* Disruptive-inspired Brand Colors */
+    --disruptive-red: 0 75% 45%;
+    --disruptive-dark-red: 0 75% 35%;
+    --disruptive-black: 0 0% 13%;
+    --disruptive-gray: 0 0% 45%;
+    --disruptive-light-gray: 0 0% 96%;
+    --white: 0 0% 100%;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 84% 60%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 75% 45%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    letter-spacing: -0.025em;
+  }
+}
+
+/* Utility classes */
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-red-600 to-red-500 bg-clip-text text-transparent;
+  }
+
+  .bg-disruptive-red {
+    background-color: hsl(var(--disruptive-red));
+  }
+  .bg-disruptive-dark-red {
+    background-color: hsl(var(--disruptive-dark-red));
+  }
+  .bg-disruptive-black {
+    background-color: hsl(var(--disruptive-black));
+  }
+  .bg-disruptive-gray {
+    background-color: hsl(var(--disruptive-gray));
+  }
+  .bg-disruptive-light-gray {
+    background-color: hsl(var(--disruptive-light-gray));
+  }
+
+  .text-disruptive-red {
+    color: hsl(var(--disruptive-red));
+  }
+  .text-disruptive-black {
+    color: hsl(var(--disruptive-black));
+  }
+  .text-disruptive-gray {
+    color: hsl(var(--disruptive-gray));
+  }
+
+  .border-disruptive-red {
+    border-color: hsl(var(--disruptive-red));
+  }
+
+  .hover\:bg-disruptive-red:hover {
+    background-color: hsl(var(--disruptive-red));
+  }
+  .hover\:bg-disruptive-dark-red:hover {
+    background-color: hsl(var(--disruptive-dark-red));
+  }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--disruptive-light-gray));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--disruptive-red));
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--disruptive-dark-red));
+}
+
+/* Modal blur effect */
+.modal-overlay {
+  backdrop-filter: blur(8px);
+  @media (prefers-reduced-motion: reduce) {
+    backdrop-filter: none;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+}
+
+/* Fix for modal scrolling */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* Ensure modal content scrolls properly */
+.modal-content {
+  max-height: calc(100vh - 2rem);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+footer {
+  overflow-x: hidden;
+}
+
+/* Reduce motion for animations when user prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Final CSS bug suppression (debug class or SSR leak) */
+.ContentWrapper-sc-__sc-1ks3v0d-5.lc-h5qda7,
+body > pre,
+body > pre:has(.ContentWrapper-sc-__sc-1ks3v0d-5),
+body > pre:has(.lc-h5qda7) {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  width: 0 !important;
+  overflow: hidden !important;
+  position: absolute !important;
+  z-index: -999 !important;
+  pointer-events: none !important;
+  opacity: 0 !important;
+}
+
+/* Growth Plan Button Styling */
+.growth-plan-button {
+  position: relative;
+  z-index: 10;
+  transition: transform 0.2s ease-in-out;
+}
+
+.growth-plan-button:hover {
+  transform: translateY(-2px);
+}
+
+/* Fix for the double scrollbar issue */
+html, body {
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: auto;
+  height: auto;
+  position: relative;
+}
+
+/* Fix for the delayed scroll issue */
+section {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Fix for footer white space */
+footer {
+  margin-bottom: -20px;
+  position: relative;
+  z-index: 10;
+}
+
+/* Hide any content that might appear after the footer */
+footer + * {
+  display: none !important;
+}
+
+/* Remove white line under footer */
+footer .w-full.h-[20px].bg-white.mt-[-20px] {
+  display: none;
+}
